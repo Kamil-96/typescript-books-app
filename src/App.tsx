@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import BooksList from './components/BooksList/BooksList';
+import AddBookForm from './components/AddBookForm/AddBookForm';
 import { Book } from './interfaces/Book.interface';
 
 const booksData: Book[] = [
@@ -9,6 +10,10 @@ const booksData: Book[] = [
 
 const App: React.FC = () => {
   const [books, setBooks] = useState(booksData);
+
+  const addBook = (book: Book) => {
+    setBooks([...books, book])
+  }
   
   return (
     <div className="container">
@@ -16,6 +21,7 @@ const App: React.FC = () => {
          <h1>Books App</h1>
       </header>
       <BooksList books={books} />
+      <AddBookForm addBook={addBook} />
     </div>
   );
 }
