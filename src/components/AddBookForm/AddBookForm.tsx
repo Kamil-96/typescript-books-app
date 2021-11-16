@@ -20,7 +20,7 @@ const AddBookForm: React.FC<Props> = ({ addBook }) => {
       author,
       price
     }
-    console.log(book);
+    
     addBook(book);
     
     setTitle('');
