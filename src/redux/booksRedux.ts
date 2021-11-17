@@ -1,5 +1,9 @@
 import { ADD_BOOK, REMOVE_BOOK, BookAction, BooksState } from './booksTypes' ;
 import { Book } from '../interfaces/Book.interface';
+import { StoreState } from './mainTypes';
+
+// selectors
+export const getAllBooks = (state: StoreState): BooksState => state.books;
 
 // action creators
 export const addBook = (payload: Book): BookAction => ({ payload, type: ADD_BOOK })
